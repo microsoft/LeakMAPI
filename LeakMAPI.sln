@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LeakMAPI", "LeakMAPI\LeakMAPI.vcxproj", "{021C5E28-089C-4B57-9565-B96EA07DB772}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{021C5E28-089C-4B57-9565-B96EA07DB772}.Debug|x64.ActiveCfg = Debug|x64
+		{021C5E28-089C-4B57-9565-B96EA07DB772}.Debug|x64.Build.0 = Debug|x64
+		{021C5E28-089C-4B57-9565-B96EA07DB772}.Debug|x86.ActiveCfg = Debug|Win32
+		{021C5E28-089C-4B57-9565-B96EA07DB772}.Debug|x86.Build.0 = Debug|Win32
+		{021C5E28-089C-4B57-9565-B96EA07DB772}.Release|x64.ActiveCfg = Release|x64
+		{021C5E28-089C-4B57-9565-B96EA07DB772}.Release|x64.Build.0 = Release|x64
+		{021C5E28-089C-4B57-9565-B96EA07DB772}.Release|x86.ActiveCfg = Release|Win32
+		{021C5E28-089C-4B57-9565-B96EA07DB772}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {68C9E5E4-FCB3-446F-B68E-777CD1468ACE}
+	EndGlobalSection
+EndGlobal
