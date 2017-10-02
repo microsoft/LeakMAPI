@@ -2,10 +2,16 @@
 //
 
 #include "stdafx.h"
+#include <MAPIX.h>
 
 
 int main()
 {
-    return 0;
-}
+	printf("Initializing MAPI\r\n");
+	MAPIINIT_0 mapiInit = { MAPI_INIT_VERSION, 0 };
+	HRESULT hr = ::MAPIInitialize(&mapiInit);
 
+	//printf("Uninitializing MAPI\r\n");
+	//::MAPIUninitialize();
+	return 0;
+}
