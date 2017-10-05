@@ -88,5 +88,6 @@ void main(int argc, char* argv[])
 		::MAPIUninitialize();
 	}
 
+	printf("Exiting\r\n");
 	return;
 }
