@@ -26,7 +26,7 @@ Exiting
 ## Scenario 2 - DoFastShutdown called
 Use (https://msdn.microsoft.com/en-us/library/office/dd941319.aspx)[DoFastShutdown]. According to (https://msdn.microsoft.com/en-us/library/office/dd941346.aspx)[Best Practices], we should not call MAPIUninitialize.
 ```
-C:\src\LeakMAPI\Debug>leakmapi
+C:\src\LeakMAPI\Debug>leakmapi fastshutdown
 Will run DoFastShutdown.
 
 Initializing MAPI
