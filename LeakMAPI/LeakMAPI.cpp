@@ -39,44 +39,18 @@ void DoFastShutdown()
 	if (lpMAPISession) lpMAPISession->Release();
 }
 
-void DoMAPILogonExLoop()
+void DoMAPIInitializeLoop()
 {
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 10; i++) {
 		printf("Step %d\r\n", i + 1);
 		printf("Initializing MAPI\r\n");
 		MAPIINIT_0 mapiInit = { MAPI_INIT_VERSION, 0 };
 		HRESULT hRes = ::MAPIInitialize(&mapiInit);
 
-		if (!FAILED(hRes))
-		{
-			LPMAPISESSION lpSession = 0;
-			printf("MAPILogonEx started\r\n");
-
-			hRes = MAPILogonEx(NULL, 0, 0, MAPI_EXTENDED | MAPI_USE_DEFAULT, &lpSession);
-			if (FAILED(hRes))
-			{
-				printf("MAPILogonEx Failed\r\n");
-				return;
-			}
-
-			printf("MAPILogonEx Ended\r\n");
-
-			if (lpSession)
-			{
-				printf("Logging off\r\n");
-				lpSession->Logoff(0, 0, 0); // critical to the crash
-				printf("Releasing session\r\n");
-				lpSession->Release();
-				lpSession = NULL;
-			}
-		}
-
 		printf("Uninitializing MAPI\r\n");
 		MAPIUninitialize();
 		Sleep(1000);
 	}
-
-	MAPIUninitialize();
 }
 
 void DisplayUsage()
@@ -88,7 +62,7 @@ void DisplayUsage()
 	printf("\n");
 	printf("Options:\n");
 	printf("        fastshutdown Run DoFastShutdown.\n");
-	printf("        loop Run MAPILogonEx in a loop\n");
+	printf("        loop Run MAPIInitialize in a loop\n");
 	printf("        unint Run MAPIUninitialize.\n");
 }
 
@@ -125,7 +99,7 @@ void main(int argc, char* argv[])
 	}
 
 	if (doLoop) {
-		DoMAPILogonExLoop();
+		DoMAPIInitializeLoop();
 	}
 	else
 	{
