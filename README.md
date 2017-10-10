@@ -54,7 +54,7 @@ Exiting
 Might crash on Windows 7
 ```
 C:\src\LeakMAPI\Debug>LeakMAPI.exe loop
-Will run MAPILogonEx in a loop.
+Will run MAPIInitialize in a loop.
 
 Step 1
 Initializing MAPI
