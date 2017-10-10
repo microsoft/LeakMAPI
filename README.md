@@ -8,10 +8,11 @@ C:\src\LeakMAPI\Debug>leakmapi ?
 LeakMAPI - MAPI leak tester
    Test various ways of leaking MAPI.
 
-Usage:  LeakMAPI [fastshutdown] [uninit]
+Usage:  LeakMAPI [fastshutdown] [loop] [uninit]
 
 Options:
         fastshutdown Run DoFastShutdown.
+        loop Run MAPILogonEx in a loop
         unint Run MAPIUninitialize.
 ```
 
@@ -47,4 +48,27 @@ Will run MAPIUninitialize.
 Initializing MAPI
 Uninitializing MAPI
 Exiting
+```
+
+## Scenario 4 - Loop MAPILogonEx calls
+Might crash on Windows 7
+```
+C:\src\LeakMAPI\Debug>LeakMAPI.exe loop
+Will run MAPILogonEx in a loop.
+
+Step 1
+Initializing MAPI
+MAPILogonEx started
+MAPILogonEx Ended
+Logging off
+Releasing session
+Uninitializing MAPI
+Step 2
+Initializing MAPI
+MAPILogonEx started
+MAPILogonEx Ended
+Logging off
+Releasing session
+Uninitializing MAPI
+etc...
 ```
