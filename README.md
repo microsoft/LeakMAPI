@@ -12,7 +12,7 @@ Usage:  LeakMAPI [fastshutdown] [loop] [uninit]
 
 Options:
         fastshutdown Run DoFastShutdown.
-        loop Run MAPILogonEx in a loop
+        loop Run MAPIInitialize in a loop
         unint Run MAPIUninitialize.
 ```
 
@@ -50,7 +50,7 @@ Uninitializing MAPI
 Exiting
 ```
 
-## Scenario 4 - Loop MAPILogonEx calls
+## Scenario 4 - Loop MAPIInitialize calls
 Might crash on Windows 7
 ```
 C:\src\LeakMAPI\Debug>LeakMAPI.exe loop
@@ -58,17 +58,9 @@ Will run MAPILogonEx in a loop.
 
 Step 1
 Initializing MAPI
-MAPILogonEx started
-MAPILogonEx Ended
-Logging off
-Releasing session
 Uninitializing MAPI
 Step 2
 Initializing MAPI
-MAPILogonEx started
-MAPILogonEx Ended
-Logging off
-Releasing session
 Uninitializing MAPI
 etc...
 ```
